@@ -1,0 +1,32 @@
+<h2>Polls</h2>
+
+{{msg}}
+
+<table class="amp">
+<thead>
+<tr>
+<th>Name</th>
+<th>Active</th>
+<th>Options</th>
+<th>&nbsp;</th>
+</tr>
+<thead>
+
+<tbody>
+{{#list}}
+<tr>
+<td>{{name}}</td>
+<td>{{active}}</td>
+<td>{{options}}</td>
+<td class="largericons">
+<a href="/polls/{{id}}/edit"><span class="icon-pencil"></span></a>
+<a href="/polls/{{id}}/delete" class="deleteaction" dest="/polls"><span class="icon-trash"></span></a>
+</td>
+</tr>
+{{/list}}
+<tbody>
+
+</table>
+
+<a href="/polls/create" class="button">Create Poll</a>
+

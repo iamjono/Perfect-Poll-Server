@@ -1,0 +1,61 @@
+<h2>Polls</h2>
+<h3 class="mt">{{action}} Poll</h3>
+
+{{msg}}
+
+<form action="?" method="POST" id="theform">
+<input type="hidden" name="_csrf" value="{{csrfToken}}">
+<input type="hidden" name="id" value="{{id}}">
+<div class="row">
+
+<div class="col six first">
+<div class="row">
+<label class="mt hmb">Name:</label>
+<div class="col thirteen first">
+<input type="text" name="name" class="hpl" value="{{name}}" required>
+</div>
+</div>
+
+<div class="row">
+<label class="mt hmb">Active:</label>
+<div class="col thirteen first">
+<input type="text" name="active" class="hpl" value="{{active}}" required number>
+</div>
+</div>
+
+
+</div>
+<div class="col six last">
+
+
+<div class="row">
+<label class="mt hmb">Options:</label>
+{{#options}}
+{{#items}}
+<div class="col thirteen first">
+<input type="text" name="option" class="hpl" value="{{name}}">
+</div>
+{{/items}}
+{{/options}}
+
+<div class="col thirteen first">
+<input type="text" name="option" class="hpl" value="">
+</div>
+
+
+</div>
+</div>
+</div>
+<button type="submit" class="dmt">Save</button>
+<a href="/polls" class="button">Done</a>
+</form>
+
+<script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js"></script>
+<script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/additional-methods.min.js"></script>
+
+<script>
+$("#theform").validate();
+</script>
+
+
+
